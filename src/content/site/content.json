@@ -1,0 +1,155 @@
+{
+  "home": {
+    "heroTitle": "Where business insight meets technical mastery",
+    "heroSlogan": "ServiceNow solutions, Made Easy. Done Right!",
+    "heroValuePropositions": [
+      "We speak the language of business.",
+      "We understand our customers' needs.",
+      "We excel in ServiceNow solutions.",
+      "We deliver value."
+    ],
+    "aboutHeading": "With a commitment to excellence and innovation",
+    "aboutParagraph1": "At SME-Excellence, we speak the language of business and understand what truly matters to our customers. Our deep expertise in ServiceNow enables us to design, configure, and implement solutions that streamline processes and unlock efficiency.",
+    "aboutParagraph2": "We go beyond delivering projects—we deliver measurable value that transforms organizations and empowers growth.",
+    "principles": [
+      {
+        "title": "We Simplify",
+        "tagline": "Turning complexity into clarity",
+        "description": "With our deep ServiceNow Expertise, we make complex processes simple. Our approach removes unnecessary complications and streamlines workflows.",
+        "icon": "✨"
+      },
+      {
+        "title": "We Synergy",
+        "tagline": "Collaboration that drives success",
+        "description": "We believe in synergy—collaborating closely with your teams to align technology with business goals for seamless integration.",
+        "icon": "🤝"
+      },
+      {
+        "title": "We Scale",
+        "tagline": "Solutions that grow with you",
+        "description": "Our solutions are designed to grow with your business, ensuring long-term sustainability and performance.",
+        "icon": "📈"
+      }
+    ],
+    "finalCtaTitle": "Let's build excellence together",
+    "finalCtaText": "Contact us today to start your transformation"
+  },
+  "about": {
+    "heroTitle": "Who We Are",
+    "heroSubtitle": "With a commitment to excellence and innovation, we help businesses achieve more, faster.",
+    "storyHeading": "We speak the language of business",
+    "storyParagraph1": "We understand what truly matters to our customers. Our deep expertise in ServiceNow enables us to design, configure, and implement solutions that streamline processes and unlock efficiency.",
+    "storyParagraph2": "We go beyond delivering projects—we deliver measurable value that transforms organizations and empowers growth.",
+    "features": [
+      "Business-first approach to technology",
+      "Deep ServiceNow platform expertise",
+      "Proven implementation methodology",
+      "Long-term partnership focus"
+    ],
+    "missionText": "To make ServiceNow implementation accessible and cost-effective for every business. We simplify complexity, foster synergy through collaboration, and deliver scalable solutions that empower organizations to achieve measurable success.",
+    "visionText": "To be the trusted ServiceNow partner for organizations worldwide, driving digital transformation through simplicity, synergy, and scalable innovation.",
+    "finalCtaTitle": "Ready to Start ServiceNow Journey?",
+    "finalCtaText": "Partner with SME-Excellence and unlock the full potential of ServiceNow for your organization."
+  },
+  "services": {
+    "heroTitle": "Empowering Businesses Through ServiceNow Excellence",
+    "heroSubtitle": "Comprehensive solutions designed to transform your operations and drive measurable results.",
+    "mainServices": [
+      {
+        "title": "ServiceNow Implementations",
+        "tagline": "Accelerate transformation with tailored ServiceNow solutions.",
+        "description": "Delivering end-to-end implementations across key ServiceNow modules. With our ServiceNow excellence, within 4-8 weeks, we will help organizations kick start their ServiceNow journey.",
+        "features": [
+          "ITSM – Streamline incident, problem, and change management",
+          "ITOM – Automate and optimize IT infrastructure",
+          "IRM, BCM, TPRM, VRM – Strengthen compliance and manage risks",
+          "HAM/SAM – Optimize asset lifecycle and reduce costs",
+          "SPM – Align investments with strategic business goals",
+          "HRSD – Enhance employee experience and HR efficiency",
+          "Vendor & Contract Management",
+          "Third-Party Integrations",
+          "Now Assist (AI) – AI-powered automation"
+        ]
+      },
+      {
+        "title": "End-to-End Platform Managed Services",
+        "tagline": "Keep your platform running at peak performance.",
+        "description": "Comprehensive support for your ServiceNow ecosystem with proactive monitoring, maintenance, and performance optimization.",
+        "features": [
+          "DevOps Enablement – Continuous development and operations",
+          "Proactive monitoring and maintenance",
+          "Performance optimization",
+          "24/7 Platform support"
+        ]
+      },
+      {
+        "title": "Consulting & Strategic Advisory",
+        "tagline": "Expert guidance for smarter decisions.",
+        "description": "Maximize platform value with our comprehensive advisory services designed to help you get the most from your ServiceNow investment.",
+        "features": [
+          "Solution Architecture – Scalable designs leveraging out-of-box capabilities",
+          "Business Analysis – Translate business needs into technical solutions",
+          "Process Optimization – Improve efficiency and reduce complexity",
+          "AI Journey with Now Assist – Unlock intelligent automation",
+          "Licensing Advisory – Optimize licensing for cost efficiency and compliance"
+        ]
+      }
+    ],
+    "processSteps": [
+      {
+        "title": "Discovery",
+        "description": "We understand your needs and goals"
+      },
+      {
+        "title": "Design",
+        "description": "We architect the perfect solution"
+      },
+      {
+        "title": "Implement",
+        "description": "We build and configure your platform"
+      },
+      {
+        "title": "Optimize",
+        "description": "We ensure peak performance"
+      }
+    ],
+    "additionalServices": [
+      {
+        "title": "Upgrades",
+        "description": "Complete in as little as 1-2 weeks"
+      },
+      {
+        "title": "CMDB/CSDM Setup & Migration",
+        "description": "Ensure data integrity and compliance"
+      },
+      {
+        "title": "Portal Development",
+        "description": "Design and implementation of intuitive portals"
+      },
+      {
+        "title": "Custom Projects",
+        "description": "Integrations and module implementations tailored to you"
+      }
+    ],
+    "finalCtaTitle": "Transform Your ServiceNow Experience",
+    "finalCtaText": "Let's discuss how we can help you achieve your goals and unlock the full potential of ServiceNow."
+  },
+  "contact": {
+    "heroTitle": "Let's Build Excellence Together",
+    "heroSubtitle": "Ready to transform your business? Get in touch and let's discuss how we can help.",
+    "infoText": "We'd love to hear from you. Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.",
+    "addressLine1": "Nålemagervej 1",
+    "addressLine2": "9000 Aalborg, Denmark",
+    "cvr": "45947475",
+    "rfpTitle": "Looking for an RFP?",
+    "rfpText": "Request a detailed proposal tailored to your specific needs and requirements.",
+    "rfpButtonText": "Request RFP",
+    "serviceOptions": [
+      "ServiceNow Implementation",
+      "Managed Services",
+      "Consulting & Advisory",
+      "Platform Core Support",
+      "Other"
+    ]
+  }
+}

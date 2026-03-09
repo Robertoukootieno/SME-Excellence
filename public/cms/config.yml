@@ -1,0 +1,108 @@
+backend:
+  name: git-gateway
+
+local_backend: true
+
+media_folder: public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: site
+    label: Website Content
+    files:
+      - file: src/content/site/content.json
+        label: Site Content
+        name: content
+        format: json
+        fields:
+          - label: Home
+            name: home
+            widget: object
+            fields:
+              - { label: Hero Title, name: heroTitle, widget: string }
+              - { label: Hero Slogan, name: heroSlogan, widget: string }
+              - label: Hero Value Propositions
+                name: heroValuePropositions
+                widget: list
+                field: { label: Line, name: line, widget: string }
+              - { label: About Heading, name: aboutHeading, widget: string }
+              - { label: About Paragraph 1, name: aboutParagraph1, widget: text }
+              - { label: About Paragraph 2, name: aboutParagraph2, widget: text }
+              - label: Principles
+                name: principles
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Tagline, name: tagline, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - { label: Icon, name: icon, widget: string }
+              - { label: Final CTA Title, name: finalCtaTitle, widget: string }
+              - { label: Final CTA Text, name: finalCtaText, widget: text }
+
+          - label: About
+            name: about
+            widget: object
+            fields:
+              - { label: Hero Title, name: heroTitle, widget: string }
+              - { label: Hero Subtitle, name: heroSubtitle, widget: text }
+              - { label: Story Heading, name: storyHeading, widget: string }
+              - { label: Story Paragraph 1, name: storyParagraph1, widget: text }
+              - { label: Story Paragraph 2, name: storyParagraph2, widget: text }
+              - label: Features
+                name: features
+                widget: list
+                field: { label: Feature, name: feature, widget: string }
+              - { label: Mission Text, name: missionText, widget: text }
+              - { label: Vision Text, name: visionText, widget: text }
+              - { label: Final CTA Title, name: finalCtaTitle, widget: string }
+              - { label: Final CTA Text, name: finalCtaText, widget: text }
+
+          - label: Services
+            name: services
+            widget: object
+            fields:
+              - { label: Hero Title, name: heroTitle, widget: string }
+              - { label: Hero Subtitle, name: heroSubtitle, widget: text }
+              - label: Main Services
+                name: mainServices
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Tagline, name: tagline, widget: string }
+                  - { label: Description, name: description, widget: text }
+                  - label: Features
+                    name: features
+                    widget: list
+                    field: { label: Feature, name: feature, widget: string }
+              - label: Process Steps
+                name: processSteps
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: string }
+              - label: Additional Services
+                name: additionalServices
+                widget: list
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Description, name: description, widget: string }
+              - { label: Final CTA Title, name: finalCtaTitle, widget: string }
+              - { label: Final CTA Text, name: finalCtaText, widget: text }
+
+          - label: Contact
+            name: contact
+            widget: object
+            fields:
+              - { label: Hero Title, name: heroTitle, widget: string }
+              - { label: Hero Subtitle, name: heroSubtitle, widget: text }
+              - { label: Info Text, name: infoText, widget: text }
+              - { label: Address Line 1, name: addressLine1, widget: string }
+              - { label: Address Line 2, name: addressLine2, widget: string }
+              - { label: CVR, name: cvr, widget: string }
+              - { label: RFP Title, name: rfpTitle, widget: string }
+              - { label: RFP Text, name: rfpText, widget: text }
+              - { label: RFP Button Text, name: rfpButtonText, widget: string }
+              - label: Service Options
+                name: serviceOptions
+                widget: list
+                field: { label: Option, name: option, widget: string }

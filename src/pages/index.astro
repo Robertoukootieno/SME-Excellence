@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getEntry } from 'astro:content';
+
+const contentEntry = await getEntry('site', 'content');
+
+if (!contentEntry) {
+  throw new Error('Missing content entry: src/content/site/content.json');
+}
+
+const home = contentEntry.data.home;
+const principles = home.principles;
+const heroImage = '/images/background_sme%201.webp';
+const sideImage = '/images/Designer.webp';
+const showcaseImage = '/images/background_sme%202.webp';
+---
+
+<Layout title="Home">
+  <Header />
+
+  <section class="relative min-h-screen pt-28 pb-18 text-white overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={heroImage} alt="SME Excellence business transformation background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-950/92 via-primary-900/78 to-primary-950/90"></div>
+      <div class="hero-orb one"></div>
+      <div class="hero-orb two"></div>
+    </div>
+
+    <div class="container-shell relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center section-space pt-8 pb-10">
+      <div>
+        <p class="section-label !bg-white/10 !text-primary-100 !border-white/30 stagger-rise">ServiceNow Transformation Studio</p>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] mt-5 max-w-3xl stagger-rise delay-2">
+          {home.heroTitle}
+        </h1>
+        <p class="text-lg md:text-xl text-primary-100/95 mt-5 max-w-2xl stagger-rise delay-3">{home.heroSlogan}</p>
+
+        <ul class="grid sm:grid-cols-2 gap-3 mt-7 stagger-rise delay-3">
+          {home.heroValuePropositions.map((line) => (
+            <li class="glass-card px-4 py-3 text-sm md:text-base">{line}</li>
+          ))}
+        </ul>
+
+        <div class="flex flex-wrap gap-3 mt-8 stagger-rise delay-4">
+          <a href="/services" class="btn btn-primary">Explore Services</a>
+          <a href="/contact" class="btn !text-white !border-white/30 !bg-white/10 btn-ghost">Book a Strategy Call</a>
+        </div>
+      </div>
+
+      <div class="stagger-rise delay-4">
+        <div class="media-frame h-[26rem] lg:h-[32rem]">
+          <img src={sideImage} alt="ServiceNow consulting team collaboration" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell grid lg:grid-cols-2 gap-12 items-center">
+      <div class="surface-card p-7 md:p-9">
+        <p class="section-label">Who We Are</p>
+        <h2 class="text-3xl md:text-4xl mt-4">{home.aboutHeading}</h2>
+        <p class="text-neutral-600 mt-4 leading-relaxed">{home.aboutParagraph1}</p>
+        <p class="text-neutral-600 mt-4 leading-relaxed">{home.aboutParagraph2}</p>
+        <div class="grid grid-cols-3 gap-4 mt-7">
+          <div>
+            <p class="text-2xl md:text-3xl font-bold text-primary-700">4-8</p>
+            <p class="text-sm text-neutral-500">Weeks to launch</p>
+          </div>
+          <div>
+            <p class="text-2xl md:text-3xl font-bold text-primary-700">24/7</p>
+            <p class="text-sm text-neutral-500">Support ready</p>
+          </div>
+          <div>
+            <p class="text-2xl md:text-3xl font-bold text-primary-700">100%</p>
+            <p class="text-sm text-neutral-500">Client-focused</p>
+          </div>
+        </div>
+        <a href="/about" class="btn btn-ghost mt-7">Discover Our Story</a>
+      </div>
+
+      <div class="media-frame h-[25rem] md:h-[32rem]">
+        <img src={showcaseImage} alt="Digital workflow and enterprise growth visualization" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-white/65">
+    <div class="container-shell">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="section-label">Why Clients Choose Us</p>
+        <h2 class="text-3xl md:text-5xl mt-4">Built on three principles that scale with your business</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {principles.map((principle) => (
+          <article class="surface-card p-7 md:p-8 hover:-translate-y-1 transition-transform">
+            <p class="text-3xl">{principle.icon}</p>
+            <h3 class="text-2xl mt-4">{principle.title}</h3>
+            <p class="text-accent-600 font-semibold mt-2">{principle.tagline}</p>
+            <p class="text-neutral-600 mt-3 leading-relaxed">{principle.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell rounded-3xl p-9 md:p-12 bg-gradient-to-br from-primary-900 to-primary-800 text-white border border-white/15 shadow-2xl shadow-primary-950/30">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
+        <div>
+          <p class="section-label !bg-white/10 !text-primary-100 !border-white/25">Partnership Ready</p>
+          <h2 class="text-3xl md:text-5xl mt-4">{home.finalCtaTitle}</h2>
+          <p class="text-primary-100/90 mt-4 text-lg">{home.finalCtaText}</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <a href="/contact" class="btn btn-primary">Request RFP</a>
+            <a href="/about" class="btn !text-white !border-white/35 !bg-white/10 btn-ghost">Know More About Us</a>
+          </div>
+        </div>
+        <div class="media-frame h-[20rem] lg:h-[24rem]">
+          <img src={sideImage} alt="Professional consultants discussing strategy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

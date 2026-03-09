@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+
+  --color-accent-50: #fff8f1;
+  --color-accent-100: #ffe8d4;
+  --color-accent-200: #ffd2aa;
+  --color-accent-300: #ffb370;
+  --color-accent-400: #ff8c3f;
+  --color-accent-500: #ff671f;
+  --color-accent-600: #e54d06;
+  --color-accent-700: #b93d0a;
+  --color-accent-800: #923410;
+  --color-accent-900: #772f10;
+  --color-accent-950: #441605;
+
+  --color-neutral-50: #f8fafc;
+  --color-neutral-100: #f1f5f9;
+  --color-neutral-200: #e2e8f0;
+  --color-neutral-300: #cbd5e1;
+  --color-neutral-400: #94a3b8;
+  --color-neutral-500: #64748b;
+  --color-neutral-600: #475569;
+  --color-neutral-700: #334155;
+  --color-neutral-800: #1e293b;
+  --color-neutral-900: #0f172a;
+  --color-neutral-950: #020617;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-neutral-900);
+  background: var(--color-neutral-50);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+section {
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.site-shell {
+  overflow: clip;
+}
+
+.container-shell {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section-space {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--color-primary-300) 50%, white);
+  background: color-mix(in srgb, var(--color-primary-100) 55%, white);
+  color: var(--color-primary-800);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, var(--color-primary-600), var(--color-accent-500));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-light {
+  background: linear-gradient(120deg, var(--color-accent-400), var(--color-accent-300));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border-radius: 999px;
+  padding: 0.82rem 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-accent-600));
+  box-shadow: 0 10px 25px rgba(229, 77, 6, 0.25);
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(135deg, var(--color-primary-950) 0%, var(--color-primary-800) 50%, var(--color-primary-700) 100%);
+}
+
+.bg-gradient-cta {
+  background: linear-gradient(135deg, var(--color-accent-500) 0%, var(--color-accent-600) 100%);
+}
+
+.btn-ghost {
+  color: var(--color-primary-900);
+  border: 1px solid color-mix(in srgb, var(--color-primary-300) 60%, white);
+  background: color-mix(in srgb, white 70%, var(--color-primary-100));
+}
+
+.surface-card {
+  border-radius: 1.2rem;
+  border: 1px solid color-mix(in srgb, var(--color-primary-100) 45%, var(--color-neutral-200));
+  background: color-mix(in srgb, white 88%, var(--color-primary-50));
+  box-shadow: 0 14px 36px rgba(12, 24, 45, 0.08);
+}
+
+.glass-card {
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+.hero-orb.one {
+  width: min(26rem, 55vw);
+  height: min(26rem, 55vw);
+  top: -10%;
+  right: -6%;
+  background: rgba(31, 130, 255, 0.26);
+}
+
+.hero-orb.two {
+  width: min(22rem, 45vw);
+  height: min(22rem, 45vw);
+  bottom: -14%;
+  left: -8%;
+  background: rgba(255, 103, 31, 0.21);
+}
+
+.stagger-rise {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: riseIn 0.75s ease forwards;
+}
+
+.stagger-rise.delay-2 {
+  animation-delay: 0.14s;
+}
+
+.stagger-rise.delay-3 {
+  animation-delay: 0.24s;
+}
+
+.stagger-rise.delay-4 {
+  animation-delay: 0.34s;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.animated-border {
+  position: relative;
+  overflow: visible;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--color-accent-500), var(--color-primary-500), var(--color-accent-400), var(--color-primary-400));
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.animated-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: inherit;
+  z-index: -1;
+}
+
+.media-frame {
+  border-radius: 1.3rem;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 35px rgba(12, 24, 45, 0.2);
+}
+
+.media-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+@keyframes riseIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 780px) {
+  .container-shell {
+    width: min(1120px, calc(100% - 1.25rem));
+  }
+}

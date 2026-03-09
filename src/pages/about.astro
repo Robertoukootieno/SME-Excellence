@@ -1,0 +1,167 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getEntry } from 'astro:content';
+
+const contentEntry = await getEntry('site', 'content');
+
+if (!contentEntry) {
+  throw new Error('Missing content entry: src/content/site/content.json');
+}
+
+const aboutContent = contentEntry.data.about;
+const heroImage = '/images/background_sme%202%20(2).webp';
+const storyImage = '/images/Designer%20(1).webp';
+
+const principles = [
+  {
+    number: '01',
+    title: 'We Simplify',
+    tagline: 'Turning complexity into clarity',
+    description:
+      'We reduce ServiceNow complexity into practical, easy-to-adopt workflows that your teams can run with confidence.',
+    gradient: 'from-blue-500 via-primary-500 to-primary-600',
+    bgGradient: 'from-blue-50 to-primary-50'
+  },
+  {
+    number: '02',
+    title: 'We Synergy',
+    tagline: 'Collaboration that drives success',
+    description:
+      'We work side-by-side with your stakeholders so business priorities and platform delivery stay aligned throughout execution.',
+    gradient: 'from-accent-400 via-accent-500 to-orange-500',
+    bgGradient: 'from-accent-50 to-orange-50'
+  },
+  {
+    number: '03',
+    title: 'We Scale',
+    tagline: 'Solutions that grow with you',
+    description:
+      'We design robust foundations that support today\'s needs and scale as your processes, teams, and ambitions evolve.',
+    gradient: 'from-primary-600 via-indigo-500 to-accent-500',
+    bgGradient: 'from-primary-50 to-accent-50'
+  }
+];
+---
+
+<Layout title="About Us">
+  <Header />
+
+  <section class="relative min-h-[78vh] pt-32 pb-20 text-white overflow-hidden">
+    <div class="absolute inset-0">
+      <img src={heroImage} alt="SME-Excellence about background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-950/92 via-primary-900/80 to-primary-950/88"></div>
+      <div class="hero-orb one"></div>
+    </div>
+
+    <div class="container-shell relative z-10 text-center">
+      <p class="section-label !bg-white/10 !text-primary-100 !border-white/25">About SME-Excellence</p>
+      <h1 class="text-5xl md:text-7xl font-bold font-heading text-white mb-6 drop-shadow-2xl mt-6">{aboutContent.heroTitle}</h1>
+      <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed drop-shadow-lg">{aboutContent.heroSubtitle}</p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-4xl mx-auto">
+        <div class="glass-card px-4 py-5 text-center">
+          <p class="text-2xl md:text-3xl font-bold">4-8</p>
+          <p class="text-xs md:text-sm text-primary-100/80 mt-1">Weeks to value</p>
+        </div>
+        <div class="glass-card px-4 py-5 text-center">
+          <p class="text-2xl md:text-3xl font-bold">24/7</p>
+          <p class="text-xs md:text-sm text-primary-100/80 mt-1">Support model</p>
+        </div>
+        <div class="glass-card px-4 py-5 text-center">
+          <p class="text-2xl md:text-3xl font-bold">100%</p>
+          <p class="text-xs md:text-sm text-primary-100/80 mt-1">Client-focused</p>
+        </div>
+        <div class="glass-card px-4 py-5 text-center">
+          <p class="text-2xl md:text-3xl font-bold">Global</p>
+          <p class="text-xs md:text-sm text-primary-100/80 mt-1">Delivery ready</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell grid lg:grid-cols-2 gap-12 items-center">
+      <div class="surface-card p-7 md:p-9">
+        <p class="section-label">Our Story</p>
+        <h2 class="text-3xl md:text-5xl mt-4">{aboutContent.storyHeading}</h2>
+        <p class="text-neutral-600 mt-5 leading-relaxed">{aboutContent.storyParagraph1}</p>
+        <p class="text-neutral-600 mt-4 leading-relaxed">{aboutContent.storyParagraph2}</p>
+        <ul class="space-y-3 mt-7">
+          {aboutContent.features.map((feature) => (
+            <li class="flex items-center gap-3 text-neutral-700">
+              <span class="w-2.5 h-2.5 rounded-full bg-accent-500"></span>
+              {feature}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="relative">
+        <div class="absolute -inset-4 bg-gradient-to-r from-primary-200 to-accent-200 rounded-3xl blur-2xl opacity-40"></div>
+        <div class="media-frame h-[24rem] md:h-[34rem] relative">
+          <img src={storyImage} alt="SME-Excellence team workshop and planning session" />
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-950/55 via-transparent to-transparent"></div>
+          <div class="absolute left-5 right-5 bottom-5 bg-white/95 rounded-2xl p-5 shadow-xl text-left">
+            <p class="font-semibold text-neutral-900">Business-first ServiceNow delivery</p>
+            <p class="text-sm text-neutral-600 mt-1">Designed for adoption, speed, and measurable outcomes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space bg-white/70">
+    <div class="container-shell">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="section-label">Mission and Vision</p>
+        <h2 class="text-3xl md:text-5xl mt-4">The standards we hold ourselves to</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <article class="surface-card p-8">
+          <h3 class="text-2xl">Our Mission</h3>
+          <p class="text-neutral-600 mt-4 leading-relaxed">{aboutContent.missionText}</p>
+        </article>
+        <article class="surface-card p-8">
+          <h3 class="text-2xl">Our Vision</h3>
+          <p class="text-neutral-600 mt-4 leading-relaxed">{aboutContent.visionText}</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <p class="section-label">Core Principles</p>
+        <h2 class="text-3xl md:text-5xl mt-4">How we operate on every engagement</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        {principles.map((principle) => (
+          <article class={`surface-card p-7 bg-gradient-to-br ${principle.bgGradient}`}>
+            <div class={`w-12 h-12 rounded-xl bg-gradient-to-r ${principle.gradient} text-white grid place-items-center font-bold`}>{principle.number}</div>
+            <h3 class="text-2xl mt-4">{principle.title}</h3>
+            <p class={`font-semibold mt-2 bg-gradient-to-r ${principle.gradient} bg-clip-text text-transparent`}>{principle.tagline}</p>
+            <p class="text-neutral-700 mt-3 leading-relaxed">{principle.description}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell rounded-3xl p-9 md:p-12 bg-gradient-to-br from-primary-900 to-primary-800 text-white border border-white/10 shadow-2xl shadow-primary-950/30">
+      <h2 class="text-3xl md:text-5xl max-w-3xl">{aboutContent.finalCtaTitle}</h2>
+      <p class="text-primary-100/90 text-lg mt-4 max-w-3xl">{aboutContent.finalCtaText}</p>
+      <div class="flex flex-wrap gap-3 mt-7">
+        <a href="/contact" class="btn btn-primary">Get in Touch</a>
+        <a href="/services" class="btn btn-ghost !bg-white/10 !text-white !border-white/30">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
