@@ -11,119 +11,131 @@ if (!contentEntry) {
 }
 
 const home = contentEntry.data.home;
+const about = contentEntry.data.about;
 const principles = home.principles;
-const heroImage = '/images/background_sme%201.webp';
+// Primary hero backdrop image.
+const heroImage = '/images/ChatGPT%20Image%20Feb%207,%202026,%2008_09_14%20PM.webp';
+const ctaImage = '/images/background_sme%201.webp';
 const sideImage = '/images/Designer.webp';
-const showcaseImage = '/images/background_sme%202.webp';
+// Image used inside the hero content panel and supporting sections.
+const showcaseImage = '/images/ChatGPT Image Feb 7, 2026, 08_29_52 PM.webp';
 ---
 
 <Layout title="Home">
   <Header />
 
-  <section class="relative min-h-screen pt-28 pb-18 text-white overflow-hidden">
-    <div class="absolute inset-0">
-      <img src={heroImage} alt="SME Excellence business transformation background" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-gradient-to-br from-primary-950/92 via-primary-900/78 to-primary-950/90"></div>
-      <div class="hero-orb one"></div>
-      <div class="hero-orb two"></div>
-    </div>
+  <main class="tgtg-concept-home">
+    <!-- Hero: fixed background panel plus a full-width overlay content card. -->
+    <section class="tgtg-panel tgtg-panel-hero" style={`--panel-image:url('${heroImage}')`}>
+      <div class="container-shell tgtg-panel-inner">
+        <div class="tgtg-copy-card tgtg-copy-card--left">
+          <p class="section-label !bg-white/15 !text-primary-100 !border-white/30">ServiceNow Transformation Studio</p>
+          <h1 class="tgtg-display mt-5">{home.heroTitle}</h1>
+          <p class="text-lg md:text-2xl text-primary-100/95 mt-5 max-w-3xl">{home.heroSlogan}</p>
 
-    <div class="container-shell relative z-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center section-space pt-8 pb-10">
-      <div>
-        <p class="section-label !bg-white/10 !text-primary-100 !border-white/30 stagger-rise">ServiceNow Transformation Studio</p>
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] mt-5 max-w-3xl stagger-rise delay-2">
-          {home.heroTitle}
-        </h1>
-        <p class="text-lg md:text-xl text-primary-100/95 mt-5 max-w-2xl stagger-rise delay-3">{home.heroSlogan}</p>
+          <ul class="flex flex-wrap gap-3 mt-8 w-full">
+            {home.heroValuePropositions.map((line) => (
+              <li class="glass-card tgtg-value-chip px-5 py-3 text-sm md:text-base w-fit max-w-full capitalize">{line}</li>
+            ))}
+          </ul>
 
-        <ul class="grid sm:grid-cols-2 gap-3 mt-7 stagger-rise delay-3">
-          {home.heroValuePropositions.map((line) => (
-            <li class="glass-card px-4 py-3 text-sm md:text-base">{line}</li>
-          ))}
-        </ul>
-
-        <div class="flex flex-wrap gap-3 mt-8 stagger-rise delay-4">
-          <a href="/services" class="btn btn-primary">Explore Services</a>
-          <a href="/contact" class="btn !text-white !border-white/30 !bg-white/10 btn-ghost">Book a Strategy Call</a>
-        </div>
-      </div>
-
-      <div class="stagger-rise delay-4">
-        <div class="media-frame h-[26rem] lg:h-[32rem]">
-          <img src={sideImage} alt="ServiceNow consulting team collaboration" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-space">
-    <div class="container-shell grid lg:grid-cols-2 gap-12 items-center">
-      <div class="surface-card p-7 md:p-9">
-        <p class="section-label">Who We Are</p>
-        <h2 class="text-3xl md:text-4xl mt-4">{home.aboutHeading}</h2>
-        <p class="text-neutral-600 mt-4 leading-relaxed">{home.aboutParagraph1}</p>
-        <p class="text-neutral-600 mt-4 leading-relaxed">{home.aboutParagraph2}</p>
-        <div class="grid grid-cols-3 gap-4 mt-7">
-          <div>
-            <p class="text-2xl md:text-3xl font-bold text-primary-700">4-8</p>
-            <p class="text-sm text-neutral-500">Weeks to launch</p>
-          </div>
-          <div>
-            <p class="text-2xl md:text-3xl font-bold text-primary-700">24/7</p>
-            <p class="text-sm text-neutral-500">Support ready</p>
-          </div>
-          <div>
-            <p class="text-2xl md:text-3xl font-bold text-primary-700">100%</p>
-            <p class="text-sm text-neutral-500">Client-focused</p>
-          </div>
-        </div>
-        <a href="/about" class="btn btn-ghost mt-7">Discover Our Story</a>
-      </div>
-
-      <div class="media-frame h-[25rem] md:h-[32rem]">
-        <img src={showcaseImage} alt="Digital workflow and enterprise growth visualization" />
-      </div>
-    </div>
-  </section>
-
-  <section class="section-space bg-white/65">
-    <div class="container-shell">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <p class="section-label">Why Clients Choose Us</p>
-        <h2 class="text-3xl md:text-5xl mt-4">Built on three principles that scale with your business</h2>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        {principles.map((principle) => (
-          <article class="surface-card p-7 md:p-8 hover:-translate-y-1 transition-transform">
-            <p class="text-3xl">{principle.icon}</p>
-            <h3 class="text-2xl mt-4">{principle.title}</h3>
-            <p class="text-accent-600 font-semibold mt-2">{principle.tagline}</p>
-            <p class="text-neutral-600 mt-3 leading-relaxed">{principle.description}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="section-space">
-    <div class="container-shell rounded-3xl p-9 md:p-12 bg-gradient-to-br from-primary-900 to-primary-800 text-white border border-white/15 shadow-2xl shadow-primary-950/30">
-      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-10 items-center">
-        <div>
-          <p class="section-label !bg-white/10 !text-primary-100 !border-white/25">Partnership Ready</p>
-          <h2 class="text-3xl md:text-5xl mt-4">{home.finalCtaTitle}</h2>
-          <p class="text-primary-100/90 mt-4 text-lg">{home.finalCtaText}</p>
           <div class="flex flex-wrap gap-3 mt-8">
-            <a href="/contact" class="btn btn-primary">Request RFP</a>
-            <a href="/about" class="btn !text-white !border-white/35 !bg-white/10 btn-ghost">Know More About Us</a>
+            <a href="/services" class="btn btn-primary btn-orbit-border">Explore Services</a>
+            <a href="/contact" class="btn !text-white !border-white/30 !bg-white/10 btn-ghost">Book a Strategy Call</a>
           </div>
         </div>
-        <div class="media-frame h-[20rem] lg:h-[24rem]">
-          <img src={sideImage} alt="Professional consultants discussing strategy" />
+      </div>
+    </section>
+
+    <!-- About/value overview section. -->
+    <section class="tgtg-panel tgtg-panel--about" style={`--panel-image:url('${showcaseImage}')`}>
+      <div class="container-shell tgtg-panel-inner">
+        <div class="tgtg-split-card tgtg-split-card--about tgtg-split-card--about-layout">
+          <h2 class="tgtg-about-title col-span-full text-center text-3xl md:text-5xl text-primary-900 mt-2 mb-2">With A Commitment To Excellence And Innovation</h2>
+          <p class="tgtg-about-subtitle col-span-full max-w-3xl mx-auto text-center text-base md:text-xl text-primary-900/80 leading-relaxed mb-2">
+            We partner with organizations to simplify transformation, align technology with business goals, and deliver outcomes that scale with confidence.
+          </p>
+
+          <article class="surface-card tgtg-about-card p-6 md:p-7 text-left">
+            <p class="section-label">Our Story</p>
+            <h3 class="text-2xl md:text-3xl text-primary-900 mt-4">{about.storyHeading}</h3>
+            <p class="text-base md:text-lg text-primary-900/82 mt-4 leading-relaxed">{about.storyParagraph1}</p>
+            <ul class="mt-5 space-y-2.5">
+              {about.features.slice(0, 2).map((feature) => (
+                <li class="text-sm md:text-base text-primary-800/85 flex items-start gap-2">
+                  <span class="mt-2 inline-block h-2 w-2 rounded-full bg-accent-500"></span>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+
+          <div class="media-frame tgtg-about-image w-full h-[22rem] md:h-[28rem] lg:h-[31rem]">
+            <img src={sideImage} alt="ServiceNow consulting team collaboration" />
+          </div>
+
+          <article class="surface-card tgtg-about-card p-6 md:p-7 text-left">
+            <p class="section-label">Mission and Vision</p>
+            <p class="text-base md:text-lg text-primary-900/84 mt-4 leading-relaxed">{about.missionText}</p>
+            <p class="text-base md:text-lg text-primary-900/80 mt-4 leading-relaxed">{about.visionText}</p>
+            <div class="grid grid-cols-3 gap-3 mt-6 text-center">
+              <div class="tgtg-about-kpi">
+                <p class="text-xl md:text-2xl font-bold text-primary-700">4-8</p>
+                <p class="text-xs md:text-sm text-primary-800/80">Weeks</p>
+              </div>
+              <div class="tgtg-about-kpi">
+                <p class="text-xl md:text-2xl font-bold text-primary-700">24/7</p>
+                <p class="text-xs md:text-sm text-primary-800/80">Support</p>
+              </div>
+              <div class="tgtg-about-kpi">
+                <p class="text-xl md:text-2xl font-bold text-primary-700">100%</p>
+                <p class="text-xs md:text-sm text-primary-800/80">Focused</p>
+              </div>
+            </div>
+            <a href="/about" class="btn btn-ghost mt-6">Discover Our Story</a>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Principles section rendered from CMS content. -->
+    <section class="tgtg-panel tgtg-panel--principles" style={`--panel-image:url('${sideImage}')`}>
+      <div class="container-shell tgtg-panel-inner">
+        <div class="tgtg-principles-card tgtg-principles-card--flat">
+          <div class="max-w-3xl">
+            <p class="section-label !text-xs md:!text-sm">Why Clients Choose Us</p>
+            <h2 class="text-4xl md:text-6xl mt-4">Built on three principles that scale with your business</h2>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-6 mt-10 tgtg-principles-grid">
+            {principles.map((principle) => (
+              <article class="surface-card tgtg-principle-item p-7 md:p-8 hover:-translate-y-1 transition-transform">
+                <p class="text-3xl">{principle.icon}</p>
+                <h3 class="text-2xl md:text-3xl mt-4">{principle.title}</h3>
+                <p class="text-accent-600 text-lg md:text-xl font-semibold mt-2">{principle.tagline}</p>
+                <p class="text-neutral-700 text-base md:text-lg mt-3 leading-relaxed">{principle.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final conversion section with primary call-to-action. -->
+    <section class="tgtg-panel tgtg-panel-cta" style={`--panel-image:url('${ctaImage}')`}>
+      <div class="container-shell tgtg-panel-inner">
+        <div class="tgtg-cta-card">
+          <p class="section-label !bg-white/12 !text-primary-100 !border-white/25">Partnership Ready</p>
+          <h2 class="text-3xl md:text-6xl mt-4 max-w-4xl">{home.finalCtaTitle}</h2>
+          <p class="text-primary-100/90 mt-4 text-lg md:text-2xl max-w-3xl">{home.finalCtaText}</p>
+          <div class="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-start">
+            <a href="/about" class="btn !text-white !border-white/35 !bg-white/10 btn-ghost">Know More About Us</a>
+            <a href="/contact" class="btn btn-primary">Request RFP</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <Footer />
 </Layout>
