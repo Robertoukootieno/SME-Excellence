@@ -9,27 +9,27 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-primary-950/80 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-primary-950/50" id="header">
-  <nav class="w-full px-6 py-3" id="nav-container">
-    <div class="max-w-7xl mx-auto flex justify-between items-center" id="nav-inner">
+<header class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-primary-950/82 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-primary-950/50" id="header">
+  <nav class="w-full px-4 md:px-10 lg:px-14 py-4 md:py-5" id="nav-container">
+    <div class="relative flex justify-between items-center" id="nav-inner">
       <a href="/" class="flex items-center gap-3 group" aria-label="SME-Excellence home">
         <div class="relative">
-          <div class="w-11 h-11 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-accent-500/20">
-            <span class="text-white font-bold text-xl font-heading">S</span>
+          <div class="w-12 h-12 md:w-14 md:h-14 bg-gradient-to-br from-primary-500 to-accent-500 rounded-xl flex items-center justify-center transform group-hover:scale-105 group-hover:rotate-3 transition-all duration-300 shadow-lg shadow-accent-500/20">
+            <span class="text-white font-bold text-xl md:text-2xl font-heading">S</span>
           </div>
         </div>
         <div class="flex flex-col">
-          <span class="text-xl font-bold font-heading text-white group-hover:text-accent-400 transition-colors">SME</span>
-          <span class="text-[10px] font-semibold text-primary-300 -mt-1 tracking-[0.2em]">EXCELLENCE</span>
+          <span class="text-2xl md:text-3xl font-bold font-heading text-white group-hover:text-accent-400 transition-colors leading-none">SME</span>
+          <span class="text-[10px] md:text-xs font-semibold text-primary-300 mt-0.5 tracking-[0.24em]">EXCELLENCE</span>
         </div>
       </a>
 
-      <div class="hidden md:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
+      <div class="hidden md:flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
         {navLinks.map(link => (
           <a
             href={link.href}
             class:list={[
-              "relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-xl",
+              "relative px-5 py-2.5 text-base font-semibold tracking-[0.01em] transition-all duration-200 rounded-xl",
               currentPath === link.href
                 ? "text-white bg-white/10"
                 : "text-white/70 hover:text-white hover:bg-white/5"
@@ -43,7 +43,7 @@ const currentPath = Astro.url.pathname;
         ))}
       </div>
 
-      <a href="/contact" class="hidden md:inline-block relative bg-gradient-cta text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:shadow-lg hover:shadow-accent-500/30 transform hover:-translate-y-0.5 transition-all duration-200 animated-border">Get Started</a>
+      <a href="/contact" class="hidden md:inline-block relative bg-gradient-cta text-white px-7 py-3.5 rounded-xl text-base font-semibold hover:shadow-lg hover:shadow-accent-500/30 transform hover:-translate-y-0.5 transition-all duration-200 animated-border">Get Started</a>
 
       <button
         id="mobile-menu-btn"
@@ -57,7 +57,7 @@ const currentPath = Astro.url.pathname;
     </div>
   </nav>
 
-  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-primary-950/98 backdrop-blur-lg -translate-x-full transition-transform duration-300 pt-24">
+  <div id="mobile-menu" class="md:hidden fixed inset-0 bg-primary-950/98 backdrop-blur-lg -translate-x-full transition-transform duration-300 pt-28">
     <nav class="flex flex-col items-center gap-6 p-8">
       {navLinks.map(link => (
         <a 
@@ -90,10 +90,10 @@ const currentPath = Astro.url.pathname;
   window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
       header?.classList.add('bg-primary-950/95');
-      header?.classList.remove('bg-primary-950/80');
+      header?.classList.remove('bg-primary-950/82');
     } else {
       header?.classList.remove('bg-primary-950/95');
-      header?.classList.add('bg-primary-950/80');
+      header?.classList.add('bg-primary-950/82');
     }
   });
 
